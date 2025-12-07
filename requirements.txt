@@ -1,9 +1,10 @@
-pandas
-numpy
-scikit-learn
 streamlit
 fastapi
 uvicorn
+scikit-learn
+pandas
+numpy
 requests
-python-multipart
+plotly
+shap
 joblib
