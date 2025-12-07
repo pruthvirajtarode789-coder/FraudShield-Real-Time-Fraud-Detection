@@ -1,0 +1,9 @@
+[
+  "amount",
+  "is_international",
+  "num_tx_24h",
+  "avg_amount_24h",
+  "country_US",
+  "time_of_day_night",
+  "device_type_mobile"
+]

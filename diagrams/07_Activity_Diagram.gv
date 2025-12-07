@@ -1,0 +1,23 @@
+digraph "07_Activity_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=TB
+	node [fontname=Arial fontsize=9 shape=ellipse style=filled]
+	start [label=Start fillcolor="#10b981" fontcolor=white shape=circle width=0.5]
+	open [label="Open Application" fillcolor="#dbeafe"]
+	input [label="Input Transaction
+Data" fillcolor="#dbeafe"]
+	validate [label="Validate Input" fillcolor="#fbbf24"]
+	process [label="Process with
+ML Model" fillcolor="#a78bfa" fontcolor=white]
+	display [label="Display Results &
+Analytics" fillcolor="#dbeafe"]
+	export [label="Export Report
+(Optional)" fillcolor="#dbeafe"]
+	end [label=End fillcolor="#ef4444" fontcolor=white shape=circle width=0.5]
+	start -> open
+	open -> input
+	input -> validate
+	validate -> process
+	process -> display
+	display -> export
+	export -> end
+}

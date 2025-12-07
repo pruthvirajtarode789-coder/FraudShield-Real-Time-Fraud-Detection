@@ -1,0 +1,27 @@
+digraph "04_DataFlow_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=LR
+	node [fontname=Arial fontsize=9 shape=ellipse style=filled]
+	raw_data [label="Raw Transaction
+Data" fillcolor="#fed7aa" shape=box]
+	preprocess [label="Data
+Preprocessing" fillcolor="#fbbf24" shape=ellipse]
+	train [label="Model
+Training" fillcolor="#f59e0b" shape=ellipse]
+	model [label="Trained
+Model" fillcolor="#10b981" shape=box]
+	api [label="API
+Endpoint" fillcolor="#6366f1" fontcolor=white shape=ellipse]
+	input [label="New
+Transaction" fillcolor="#fed7aa" shape=box]
+	predict [label="Prediction
+Engine" fillcolor="#a78bfa" shape=ellipse]
+	output [label="Fraud Score &
+Risk Level" fillcolor="#10b981" shape=box]
+	raw_data -> preprocess
+	preprocess -> train
+	train -> model
+	model -> api
+	input -> api
+	api -> predict
+	predict -> output
+}

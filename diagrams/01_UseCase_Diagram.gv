@@ -1,0 +1,19 @@
+digraph "01_UseCase_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=LR
+	node [fillcolor="#e0e7ff" fontname=Arial fontsize=10 shape=ellipse style=filled]
+	user [label=User fillcolor="#6366f1" fontcolor=white fontsize=11 shape=box style=filled]
+	data_scientist [label="Data Scientist" fillcolor="#6366f1" fontcolor=white fontsize=11 shape=box style=filled]
+	admin [label=Admin fillcolor="#6366f1" fontcolor=white fontsize=11 shape=box style=filled]
+	uc1 [label="Detect Fraud" fillcolor="#dbeafe" shape=ellipse]
+	uc2 [label="Input Transaction" fillcolor="#dbeafe" shape=ellipse]
+	uc3 [label="View Analytics" fillcolor="#dbeafe" shape=ellipse]
+	uc4 [label="Export Report" fillcolor="#dbeafe" shape=ellipse]
+	uc5 [label="Train Model" fillcolor="#dbeafe" shape=ellipse]
+	uc6 [label="Manage System" fillcolor="#dbeafe" shape=ellipse]
+	user -> uc1
+	user -> uc2
+	user -> uc3
+	user -> uc4
+	data_scientist -> uc5
+	admin -> uc6
+}

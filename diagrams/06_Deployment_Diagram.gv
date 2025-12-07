@@ -1,0 +1,17 @@
+digraph "06_Deployment_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=LR
+	node [fontname=Arial fontsize=10 shape=box style=filled]
+	dev [label="Development
+Environment
+(Local)" fillcolor="#dbeafe" style=filled]
+	docker [label="Docker
+Container" fillcolor="#a78bfa" fontcolor=white style=filled]
+	prod [label="Production
+Environment
+(Server)" fillcolor="#10b981" fontcolor=white style=filled]
+	client [label="Client
+Browser" fillcolor="#fed7aa" style=filled]
+	dev -> docker [label=Build]
+	docker -> prod [label=Deploy]
+	prod -> client [label="Serve UI"]
+}

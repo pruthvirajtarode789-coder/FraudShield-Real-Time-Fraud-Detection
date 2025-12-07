@@ -1,0 +1,49 @@
+digraph "08_Class_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=TB
+	node [fontname=Arial fontsize=8 shape=record style=filled]
+	transaction [label="
+    {
+      TransactionData |
+      - transaction_id: str \l
+      - amount: float \l
+      - merchant: str \l
+      - category: str \l
+      + validate(): bool \l
+      + preprocess(): dict \l
+    }
+    " fillcolor="#dbeafe"]
+	model [label="
+    {
+      MLModel |
+      - model_path: str \l
+      - columns: list \l
+      - scaler: StandardScaler \l
+      + load_model(): void \l
+      + predict(data): float \l
+      + get_probability(): float \l
+    }
+    " fillcolor="#c7d2fe"]
+	detector [label="
+    {
+      FraudDetector |
+      - model: MLModel \l
+      - preprocessor: Preprocessor \l
+      + detect_fraud(transaction): dict \l
+      + get_risk_score(): float \l
+      + generate_report(): dict \l
+    }
+    " fillcolor="#a5b4fc" fontcolor=white]
+	ui [label="
+    {
+      StreamlitUI |
+      - api_url: str \l
+      - session_state: dict \l
+      + render_dashboard(): void \l
+      + handle_input(): dict \l
+      + display_results(): void \l
+    }
+    " fillcolor="#fbbf24"]
+	ui -> detector [label=uses]
+	detector -> model [label=uses]
+	detector -> transaction [label=processes]
+}

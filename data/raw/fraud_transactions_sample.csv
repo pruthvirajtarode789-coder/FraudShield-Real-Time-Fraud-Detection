@@ -1,0 +1,3 @@
+transaction_id,customer_id,amount,transaction_type,channel,country,is_international,time_of_day,device_type,num_tx_24h,avg_amount_24h,is_fraud
+T0001,C001,245.50,online_purchase,web,IN,0,evening,desktop,3,180.20,0
+T0002,C002,8999.00,online_purchase,web,US,1,night,mobile,8,3200.50,1

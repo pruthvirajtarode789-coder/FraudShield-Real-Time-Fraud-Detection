@@ -1,0 +1,19 @@
+digraph "02_Sequence_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=LR
+	node [fillcolor="#dbeafe" fontname=Arial fontsize=9 shape=box style=filled]
+	actor0 [label=User fillcolor="#10b981" fontcolor=white fontsize=10 style=filled]
+	actor1 [label="Streamlit
+App" fillcolor="#6366f1" fontcolor=white fontsize=10 style=filled]
+	actor2 [label="FastAPI
+Server" fillcolor="#6366f1" fontcolor=white fontsize=10 style=filled]
+	actor3 [label="ML
+Model" fillcolor="#6366f1" fontcolor=white fontsize=10 style=filled]
+	actor4 [label=Database fillcolor="#10b981" fontcolor=white fontsize=10 style=filled]
+	actor0 -> actor1 [label="1. Input Transaction" fontsize=8]
+	actor1 -> actor2 [label="2. API Request" fontsize=8]
+	actor2 -> actor3 [label="3. Predict" fontsize=8]
+	actor3 -> actor2 [label="4. Result" fontsize=8]
+	actor2 -> actor4 [label="5. Store Result" fontsize=8]
+	actor2 -> actor1 [label="6. Response" fontsize=8]
+	actor1 -> actor0 [label="7. Display Output" fontsize=8]
+}

@@ -1,0 +1,15 @@
+digraph "03_Architecture_Diagram" {
+	bgcolor="#f8f9fa" dpi=300 rankdir=TB
+	node [fontname=Arial fontsize=10 shape=box style=filled]
+	pres [label="Presentation Layer
+(Streamlit UI)" fillcolor="#dbeafe" style=filled]
+	app [label="Application Layer
+(FastAPI Server)" fillcolor="#c7d2fe" style=filled]
+	logic [label="Business Logic Layer
+(ML Model)" fillcolor="#a5b4fc" style=filled]
+	data [label="Data Layer
+(Models & Data)" fillcolor="#818cf8" fontcolor=white style=filled]
+	pres -> app [label="HTTP Requests"]
+	app -> logic [label=Predictions]
+	logic -> data [label=Features]
+}
